@@ -11,3 +11,11 @@ justify-content: center;
   width: 100%;
 }
 `;
+
+/**
+ *  Cores padrão
+ */
+export const color = {
+  first: '#3b4856',
+  second: '#2A2F33'
+};

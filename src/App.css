@@ -3,3 +3,16 @@
 *::after {
   box-sizing: border-box;
 }
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  background: #f9f9f9;
+}
+.list-un {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
