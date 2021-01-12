@@ -7,16 +7,16 @@ import Footer from '../Footer';
 
 
 function Template({ children }) {
-    return (
-        <TemplateArea>
-            <Header />
-            <Menu />
-            <div className="page-body">
-                {children}
-            </div>
-            <Footer />
-        </TemplateArea>
-    );
+  return (
+    <TemplateArea>
+      <Header />
+      <Menu />
+      <div className="page-body">
+        {children}
+      </div>
+      <Footer />
+    </TemplateArea>
+  );
 }
 
 export default Template;

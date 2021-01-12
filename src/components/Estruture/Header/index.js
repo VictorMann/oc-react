@@ -1,11 +1,15 @@
 import React from 'react';
 import { HeaderArea } from './styled';
+import { Container } from '../../mainComponents';
+
 
 function Header() {
     return (
-        <HeaderArea>
-            header
-        </HeaderArea>
+        <Container>
+            <HeaderArea>
+                header
+            </HeaderArea>
+        </Container>
     );
 }
 

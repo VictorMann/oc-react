@@ -9,13 +9,13 @@ import Home from './pages/Home';
 import NotFound from './pages/404';
 
 function Routes() {
-    return (
-      <Switch>
-        <RouteHandle exact path={page("/")} component={Home} />
-        <RouteHandle exact path={page("login")} component={Login} />
-        <RouteHandle component={NotFound} />
-      </Switch>
-    );
+  return (
+    <Switch>
+      <RouteHandle exact path={page("/")} component={Home} />
+      <RouteHandle exact path={page("login")} component={Login} />
+      <RouteHandle component={NotFound} />
+    </Switch>
+  );
 }
 
 export default Routes;
