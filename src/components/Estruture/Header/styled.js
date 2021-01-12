@@ -5,8 +5,8 @@ import { asset } from '../../../helpers';
 
 export const HeaderArea = styled.header`
 display: flex;
-margin: 0 .5%;
-margin-top: .3rem;
+margin: .3rem .5% .7rem;
+
 
 .ar-logo {
   width: 130px;
