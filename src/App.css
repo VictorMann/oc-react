@@ -16,3 +16,9 @@ body {
 img {
   max-width: 100%;
 }
+.flx {
+  display: flex;
+}
+.flx-align-center {
+  align-items: center;
+}
