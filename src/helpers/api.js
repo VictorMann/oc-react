@@ -1,6 +1,6 @@
 import Cookie from 'js-cookie';
 
-const API_URL = '';
+const API_URL = 'http://localhost:8080/api/oc/';
 
 function handleFetch(endpoint, dados = {}, verbo = 'GET') {
 
@@ -57,6 +57,10 @@ function handleFetch(endpoint, dados = {}, verbo = 'GET') {
     });
 };
 
-const api = {};
+const api = {
+    marcas() {
+        return handleFetch('marcas');
+    }
+};
 
 export default api;

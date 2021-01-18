@@ -83,7 +83,7 @@ margin: .3rem .5% .7rem;
 
     button {
       border: none;
-      background: ${color.first} url(${asset('static/images/search.png')}) no-repeat center;
+      background: ${color.first} url(${asset('static/images/geral/search.png')}) no-repeat center;
       background-size: 50%;
       width: 3.5rem;
       cursor: pointer;

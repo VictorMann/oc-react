@@ -19,7 +19,7 @@ function Header() {
 
         <div className="ar ar-logo">
           <Link to={page()}>
-            <img src={asset('/static/images/logo.png')} alt="" />
+            <img src={asset('/static/images/geral/logo.png')} alt="" />
           </Link>
         </div>
 

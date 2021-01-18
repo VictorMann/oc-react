@@ -26,12 +26,12 @@ color: white;
   }
 
   &::before {
-    background: url(${asset('static/images/ciclista-white.png')}) no-repeat center;
+    background: url(${asset('static/images/geral/ciclista-white.png')}) no-repeat center;
     background-size: contain;
   }
 
   &::after {
-    background: url(${asset('static/images/arrow-point-to-right-white.png')}) no-repeat center;
+    background: url(${asset('static/images/geral/arrow-point-to-right-white.png')}) no-repeat center;
     background-size: 50%;
   }
 }
@@ -41,10 +41,17 @@ color: white;
   border: 1px solid #ddd;
   color: #fff;
   padding: .5rem;
+  text-decoration: none;
   border-radius: 3px;
   margin-left: 3em;
   margin-right: 3em;
   cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+    color: orange;
+    border-color: orange;
+  }
 }
 `;
 

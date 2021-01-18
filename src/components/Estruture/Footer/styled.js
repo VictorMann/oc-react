@@ -68,7 +68,7 @@ padding-top: 3rem;
 
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-image: url(${asset('static/images/sprint.png')});
+    background-image: url(${asset('static/images/geral/sprint.png')});
   }
   .foo-pay.bol {background-position-y: 0;width: 42px;}
   .foo-pay.visa {background-position-y: -209px;width: 50px}
@@ -89,7 +89,7 @@ padding-top: 3rem;
     height: 30px;
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-image: url(${asset('static/images/sprint.png')});
+    background-image: url(${asset('static/images/geral/sprint.png')});
     margin: 3em 0;
   }
   .foo-safe.lets {
@@ -116,7 +116,7 @@ padding-top: 3rem;
     margin-right: 10px;
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-image: url(${asset('static/images/sprint.png')});
+    background-image: url(${asset('static/images/geral/sprint.png')});
     opacity: .2;
 
     a {
@@ -134,7 +134,7 @@ padding-top: 3rem;
     height: 34px;
     background-position: 0px -332px;
     background-repeat: no-repeat;
-    background-image: url(${asset('static/images/sprint.png')});
+    background-image: url(${asset('static/images/geral/sprint.png')});
     background-size: 150px;
     margin-left: 7em;
     opacity: 0.4;
