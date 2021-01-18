@@ -27,7 +27,7 @@ function Header() {
           <ul className="list-un">
             <li><Link to="atendimento">Atendimento</Link></li>
             <li><Link to="quem-somos">Quem Somos</Link></li>
-            <li><Link to="politica-privacidade">Politica de privacidade</Link></li>
+            <li><Link to="politica-de-privacidade">Politica de privacidade</Link></li>
           </ul>
           <form>
             <div className="ss">
