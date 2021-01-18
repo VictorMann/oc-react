@@ -9,6 +9,8 @@ margin: 0;
 margin-top: .75rem;
 font-size: .8rem;
 
+color: ${color.first};
+
 li {
   &:not(:last-child)::after {
     content: '>';

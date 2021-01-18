@@ -23,5 +23,6 @@ justify-content: center;
 export const color = {
   first: '#3b4856',
   second: '#2A2F33',
-  third: '#5b6f86'
+  third: '#5b6f86',
+  fourth: '#0086B3',
 };

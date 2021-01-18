@@ -31,7 +31,7 @@ function Footer() {
             <div className="f2">
               <h3 className="foo-title">Institucional</h3>
               <ul className="list-un">
-                <li><Link to={page("sobre")}>Sobre a OCiclista</Link></li>
+                <li><Link to={page("quem-somos")}>Sobre a OCiclista</Link></li>
                 <li><Link to={page("trabalhe-conosco")}>Trabalhe conosco</Link></li>
                 <li><Link to={page("politica-de-troca")}>Política de troca</Link></li>
                 <li><Link to={page("politica-de-privacidade")}>Política de privacidade</Link></li>
