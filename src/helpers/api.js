@@ -60,6 +60,15 @@ function handleFetch(endpoint, dados = {}, verbo = 'GET') {
 const api = {
     marcas() {
         return handleFetch('marcas');
+    },
+    categoria(cat, data = {}) {
+        return handleFetch(`categoria/${cat}`, data);
+    },
+    produtosCat(id, data = {}) {
+        return handleFetch(`produto/cat/${id}`, data);
+    },
+    bestseller() {
+        return handleFetch('produto/bestseller');
     }
 };
 

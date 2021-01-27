@@ -11,6 +11,7 @@ import PoliticaPriv from './pages/PoliticaPrivacidade';
 import TrabalheConosco from './pages/TrabalheConosco';
 import PoliticaTroca from './pages/PoliticaTroca';
 import Marcas from './pages/Marcas';
+import Categoria from './pages/Categoria';
 import NotFound from './pages/404';
 
 function Routes() {
@@ -23,6 +24,8 @@ function Routes() {
       <RouteHandle path={page("politica-de-privacidade")} component={PoliticaPriv} />
       <RouteHandle path={page("politica-de-troca")} component={PoliticaTroca} />
       <RouteHandle path={page("marcas")} component={Marcas} />
+      <RouteHandle path={page("categoria/:cat")} component={Categoria} />
+
       <RouteHandle component={NotFound} />
     </Switch>
   );
