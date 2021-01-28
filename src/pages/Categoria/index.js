@@ -151,6 +151,7 @@ function Page() {
 						}
 						
 						{products && products.items.length > 0 &&
+							products.total > products.limit &&
 							<div className="cx-pagination">
 								<Pagination 
 									total={products.total} 
