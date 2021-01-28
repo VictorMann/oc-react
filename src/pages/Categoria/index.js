@@ -150,7 +150,7 @@ function Page() {
 							</ProductList>
 						}
 						
-						{products && products.items.length > 0 &&
+						{products && products.total > products.limit &&
 							<div className="cx-pagination">
 								<Pagination 
 									total={products.total} 
