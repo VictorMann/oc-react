@@ -14,6 +14,7 @@ export const PageArea = styled.div`
   order: 1;
   width: 280px;
   background-color: #f0f1f1;
+  padding-left: 1em;
 }
 .pr {
   flex: 1;
