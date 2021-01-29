@@ -27,47 +27,8 @@ function Page() {
 	const [breadCrumb, setBreadCrumb] = useState();
 	const [productOrder, setProductOrder] = useState(query.o || 'rel');
 	const [bestseller, setBestseller] = useState([]);
+	const [sideFilters, setSideFilters] = useState([]);
 
-	let sideFilters = [
-		{
-			nome: 'Categoria',
-			slug: 'categoria',
-			items: [
-					{
-						nome: 'Sapatilhas',
-						qtd: 20,
-						slug: 'sapatilhas'
-					},
-					{
-						nome: 'Tacos',
-						qtd: 4,
-						slug: 'tacos'
-					},
-					{
-						nome: 'Tênis',
-						qtd: 3,
-						slug: 'tenis'
-					},
-				]
-		},
-		{
-			nome: 'Marcas',
-			slug: 'marcas',
-			items: [
-					{
-						nome: 'FLR',
-						qtd: 21,
-						slug: 'flr'
-					},
-					{
-						nome: 'Sidi',
-						qtd: 4,
-						slug: 'sidi'
-					},
-				]
-		},
-	];
-	
 	useEffect(() => {
 
 		if (catOld !== cat) {
@@ -88,6 +49,12 @@ function Page() {
 		};
 		getProdutos();
 
+		const getSideFilter = async () => {
+			setSideFilters([]);
+			let sf = await api.sideFilterCat(cat, query).then(data => data.data);
+			setSideFilters(sf);
+		};
+		getSideFilter();
 	}, [cat, location.search]);
 
 	useEffect(() => {
@@ -114,16 +81,18 @@ function Page() {
 	};
 
 	const handleClickSideFilter = data => {
-		console.log(data);
-
 		let q = {...query};
 		delete q.page;
 		
-		if (data.group.slug == 'categoria') {
+		if (data.group.slug === 'categoria') {
 			q = makeQueryString(q);
 			history.push(page(`categoria/${data.item.slug + q}`));
+			return;
 		}
 
+		q[data.group.slug] = data.item.slug;
+		q = makeQueryString(q);
+		history.push(q);
 	};
 
 
@@ -174,7 +143,7 @@ function Page() {
 					</section>
 					<aside className="as">
 						
-						{sideFilters.map((item, k) =>
+						{sideFilters.map((item, k) => 
 							<SideFilter 
 								key={k} 
 								filter={item} 

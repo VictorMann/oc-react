@@ -1,17 +1,34 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import ReactSlider from 'react-slider';
 import { Area } from './styled';
 
 function SideFilter({ filter, handle }) {
 
-  const [items, setItems] = useState(filter.items);
+  return (
+    <Area>
+      <header><h4>{filter.nome}</h4></header>
+      {filter.slug !== 'preco' &&
+        <FilterDefault filter={filter} handle={handle} />
+      }
+      {filter.slug === 'preco' &&
+        <FilterPreco min={filter.values.min} max={filter.values.max} handle={handle} />
+      }
+    </Area>
+  )
+}
 
-  const handleClick = key => {
-    let _items = [...items];
-    _items[key].active = true;
-    setItems(_items);
+export default SideFilter;
 
+
+const FilterDefault = ({ filter, handle }) => {
+
+  let items = filter.values;
+
+  const fn = key => {
+    items[key].active = true;
+    
     let data = {
       group: {nome: filter.nome, slug: filter.slug},
       item: items[key]
@@ -19,26 +36,66 @@ function SideFilter({ filter, handle }) {
 
     handle(data);
   };
-  
 
   return (
-    <Area>
-      <header><h4>{filter.nome}</h4></header>
-      <ul className="list-un">
-        {items.map((item, k) =>
-          <li 
-            key={k} 
-            className={item.active ? 'active' : ''}
-            onClick={() => handleClick(k)}>
+    <ul className="list-un">
+      {items.map((item, k) =>
+        <li 
+          key={k} 
+          className={item.active ? 'active' : ''}
+          onClick={() => fn(k)}>
 
-              <span>{item.active && <FontAwesomeIcon icon={faCheck} />}</span>
-              <label>{item.nome} ({item.qtd})</label>
+            <span>{item.active && <FontAwesomeIcon icon={faCheck} />}</span>
+            <label>{item.nome} ({item.qtd})</label>
 
-          </li>
-        )}
-      </ul>
-    </Area>
+        </li>
+      )}
+    </ul>
   )
-}
+};
 
-export default SideFilter;
+
+const FilterPreco = ({ min, max, handle }) => {
+  const [value, setValue] = useState([min, max]);
+
+  const fn = () => {
+    let data = {
+      group: {nome: 'Preço', slug: 'preco'},
+      item: {nome: `${value[0]}-${value[1]}`, slug: `${value[0]}-${value[1]}`}
+    };
+
+    handle(data);
+  };
+  
+  return (
+    <>
+      <div className="range-preco">
+          <span>R$</span>
+          <span className="rp pmin">{value[0]}</span> até <span className="rp pmax">{value[1]}</span>
+      </div>
+
+      <ReactSlider
+          value={value}
+          // onBeforeChange={val => console.log('onBeforeChange value:', val)}
+          onChange={val => { console.log('onChange value:', val); setValue(val); }}
+          // onAfterChange={val => console.log('onAfterChange value:', val)}
+          className="slider"
+          thumbClassName="thumb"
+          trackClassName="track"
+          min={min}
+          max={max}
+          minDistance={500}
+          renderThumb={(props, state) => <div {...props}></div>}
+      />
+
+      <div>
+          <button 
+            type="button" 
+            className="btnPreco"
+            onClick={fn}>
+              Aplicar
+          </button>
+      </div>
+    </>
+  )
+};

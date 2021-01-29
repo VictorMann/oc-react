@@ -37,10 +37,24 @@ export const formatMoeda = val => {
     return val.toFixed(2).replace('.', ',');
 };
 
+/**
+ * Cria uma query string apartir de objetos
+ * alem de substitur os dados do o1 com o do o2
+ * @param {Object} o1 
+ * @param {Object} o2 
+ */
 export const makeQueryString = (o1, o2) => {
     let r = extend(o1, o2);
     r = qs.stringify(r);
     return r ? '?' + r : '';
+};
+
+/**
+ * Copia um objeto
+ * @param {Object|Array} data 
+ */
+export const copyD = data => {
+    return JSON.parse(JSON.stringify(data));
 };
 
 const extend = (o1, o2) => {

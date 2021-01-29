@@ -1,6 +1,27 @@
 import styled from 'styled-components';
 
 export const PageArea = styled.div`
+
+.horizontal-slider {
+
+  .thumb {
+    background-color: black;
+    color: white;
+  }
+
+  .track {
+    background-color: grey;
+    height: 5px;
+
+    &.track-1 {
+      background-color: red;
+    }
+  }
+}
+
+
+
+
 .cx {
   display: flex;
   margin-top: 1rem;

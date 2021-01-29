@@ -50,4 +50,36 @@ label { cursor: pointer }
     line-height: 1.2;
   }
 }
+
+.slider {
+  width: 100%;
+  height: 1rem;
+  margin: .5rem 0 .8rem;
+
+  .track {
+    background: #d8d8d8;
+    top: .3rem;
+    height: .3rem;
+
+    &.track-1 {
+      background: #c0cfdc;
+    }
+  }
+
+  .thumb {
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: #afafaf;
+    cursor: pointer;
+    font-size: 1px;
+  }
+}
+.btnPreco {
+  background: #0079fb;
+  border-color: #0079fb;
+  color: white;
+  cursor: pointer;
+  border: 1px solid #0079fb;
+}
 `;

@@ -64,11 +64,14 @@ const api = {
     categoria(cat, data = {}) {
         return handleFetch(`categoria/${cat}`, data);
     },
-    produtosCat(id, data = {}) {
-        return handleFetch(`produto/cat/${id}`, data);
+    produtosCat(cat, data = {}) {
+        return handleFetch(`produto/cat/${cat}`, data);
     },
     bestseller() {
         return handleFetch('produto/bestseller');
+    },
+    sideFilterCat(cat, data = {}) {
+        return handleFetch(`categoria/${cat}/sidefilter`, data);
     }
 };
 
