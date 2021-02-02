@@ -6,15 +6,20 @@ import { Area } from './styled';
 
 function SideFilter({ filter, handle }) {
 
+  let dataFilter = '';
+
+  switch (filter.slug) {
+    case 'preco':
+      dataFilter = <FilterPreco min={filter.values.min} max={filter.values.max} handle={handle} />
+      break;
+    default:
+     dataFilter = <FilterDefault filter={filter} handle={handle} />
+  }
+
   return (
     <Area>
       <header><h4>{filter.nome}</h4></header>
-      {filter.slug !== 'preco' &&
-        <FilterDefault filter={filter} handle={handle} />
-      }
-      {filter.slug === 'preco' &&
-        <FilterPreco min={filter.values.min} max={filter.values.max} handle={handle} />
-      }
+      {dataFilter}
     </Area>
   )
 }

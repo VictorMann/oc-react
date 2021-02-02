@@ -12,6 +12,7 @@ import ProductItem from '../../components/ProductItem';
 import ProductOrder from '../../components/ProductOrder';
 import Pagination from '../../components/Pagination';
 import SideFilter from '../../components/SideFilter';
+import SelectedFilters from '../../components/SelectedFilters';
 
 let catOld = null;
 
@@ -28,6 +29,7 @@ function Page() {
 	const [productOrder, setProductOrder] = useState(query.o || 'rel');
 	const [bestseller, setBestseller] = useState([]);
 	const [sideFilters, setSideFilters] = useState([]);
+	const [selectedFilters, setSelectFilters] = useState([]);
 
 	useEffect(() => {
 
@@ -52,7 +54,8 @@ function Page() {
 		const getSideFilter = async () => {
 			setSideFilters([]);
 			let sf = await api.sideFilterCat(cat, query).then(data => data.data);
-			setSideFilters(sf);
+			setSideFilters(sf.filterList);
+			setSelectFilters(sf.selected);
 		};
 		getSideFilter();
 	}, [cat, location.search]);
@@ -95,6 +98,17 @@ function Page() {
 		history.push(q);
 	};
 
+	const handleRemoveSelectedFilter = item => {
+		let q = {...query};
+		delete q.page;
+
+		if (item) delete q[item.slug];
+		else selectedFilters.forEach(item => delete q[item.slug]);
+
+		q = makeQueryString(q);
+		if (!q) q = location.pathname;
+		history.push(q);
+	};
 
 	return (
 		<Container margin>
@@ -105,6 +119,10 @@ function Page() {
 				<div className="cx">
 					<section className="pr">
 						<h2 className="tit">{category && category.nome}</h2>
+
+						{selectedFilters.length > 0 &&
+							<SelectedFilters items={selectedFilters} handle={handleRemoveSelectedFilter} />
+						}
 
 						<ul className="list-un dek">
 							<li>{products && products.total + ' produtos'}</li>
