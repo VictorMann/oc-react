@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faUserCircle,
@@ -8,11 +8,23 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { HeaderArea } from './styled';
+import { useQueryString } from '../../../hooks';
 import { Container } from '../../mainComponents';
+import { asset, page, makeQueryString } from '../../../helpers';
 
-import { asset, page } from '../../../helpers';
 
 function Header() {
+  const query = useQueryString();
+  const history = useHistory();
+  const [search, setSearch] = useState(query.s);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    let q = makeQueryString({s: search});
+    history.push(page('busca' + q));
+  };
+
+
   return (
     <Container>
       <HeaderArea>
@@ -29,12 +41,15 @@ function Header() {
             <li><Link to="quem-somos">Quem Somos</Link></li>
             <li><Link to="politica-de-privacidade">Politica de privacidade</Link></li>
           </ul>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="ss">
               <span>Todos</span>
             </div>
-            <input placeholder="O que você deseja encontrar?" />
-            <button type="button"></button>
+            <input 
+              value={search} 
+              onChange={e => setSearch(e.target.value)}
+              placeholder="O que você deseja encontrar?" />
+            <button type="submit"></button>
           </form>
         </div>
 

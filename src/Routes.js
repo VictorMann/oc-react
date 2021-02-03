@@ -12,6 +12,7 @@ import TrabalheConosco from './pages/TrabalheConosco';
 import PoliticaTroca from './pages/PoliticaTroca';
 import Marcas from './pages/Marcas';
 import Categoria from './pages/Categoria';
+import Busca from './pages/Busca';
 import NotFound from './pages/404';
 
 function Routes() {
@@ -25,7 +26,7 @@ function Routes() {
       <RouteHandle path={page("politica-de-troca")} component={PoliticaTroca} />
       <RouteHandle path={page("marcas")} component={Marcas} />
       <RouteHandle path={page("categoria/:cat")} component={Categoria} />
-
+      <RouteHandle path={page("busca")} component={Busca} />
       <RouteHandle component={NotFound} />
     </Switch>
   );

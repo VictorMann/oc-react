@@ -72,6 +72,9 @@ const api = {
     },
     sideFilterCat(cat, data = {}) {
         return handleFetch(`categoria/${cat}/sidefilter`, data);
+    },
+    busca(data = {}) {
+        return handleFetch('busca', data);
     }
 };
 
