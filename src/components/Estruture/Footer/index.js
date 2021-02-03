@@ -14,18 +14,18 @@ function Footer() {
             <div className="f1">
               <h3 className="foo-title">Produtos</h3>
               <ul className="list-un">
-                <li><Link to={page("acessorios")}>Acessórios</Link></li>
-                <li><Link to={page("bicicletas")}>Bicletas</Link></li>
-                <li><Link to={page("calcados")}>Calçados</Link></li>
-                <li><Link to={page("kids")}>Kids</Link></li>
-                <li><Link to={page("kits")}>Manutenção</Link></li>
-                <li><Link to={page("manutencao")}>Manutenção</Link></li>
-                <li><Link to={page("mulheres")}>Mulheres</Link></li>
-                <li><Link to={page("pecas")}>Peças</Link></li>
-                <li><Link to={page("protecao-e-seguranca")}>Proteção e Segurança</Link></li>
-                <li><Link to={page("quadros")}>Quadros</Link></li>
-                <li><Link to={page("treinamentos")}>Treiamentos</Link></li>
-                <li><Link to={page("vestuario")}>Vestuário</Link></li>
+                <li><Link to={page("categoria/acessorios")}>Acessórios</Link></li>
+                <li><Link to={page("categoria/bicicletas")}>Bicletas</Link></li>
+                <li><Link to={page("categoria/calcados")}>Calçados</Link></li>
+                <li><Link to={page("categoria/kids")}>Kids</Link></li>
+                <li><Link to={page("categoria/kits")}>Kits</Link></li>
+                <li><Link to={page("categoria/manutencao")}>Manutenção</Link></li>
+                <li><Link to={page("categoria/mulheres")}>Mulheres</Link></li>
+                <li><Link to={page("categoria/pecas")}>Peças</Link></li>
+                <li><Link to={page("categoria/protecao-e-seguranca")}>Proteção e Segurança</Link></li>
+                <li><Link to={page("categoria/quadros")}>Quadros</Link></li>
+                <li><Link to={page("categoria/treinamentos")}>Treiamentos</Link></li>
+                <li><Link to={page("categoria/vestuario")}>Vestuário</Link></li>
               </ul>
             </div>
             <div className="f2">
