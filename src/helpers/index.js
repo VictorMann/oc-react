@@ -29,7 +29,7 @@ export const asset = filename => {
 };
 
 /**
- * Formanta para moeda
+ * Formata para moeda
  * @param {Float} val 
  */
 export const formatMoeda = val => {
