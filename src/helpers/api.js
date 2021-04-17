@@ -1,6 +1,6 @@
 import Cookie from 'js-cookie';
 
-const API_URL = 'http://localhost:8080/api/oc/';
+const API_URL = process.env.REACT_APP_API;
 
 function handleFetch(endpoint, dados = {}, verbo = 'GET') {
 
