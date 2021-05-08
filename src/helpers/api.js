@@ -75,6 +75,9 @@ const api = {
     },
     busca(data = {}) {
         return handleFetch('busca', data);
+    },
+    getProduto(slug) {
+        return handleFetch(`produto/${slug}`);
     }
 };
 
